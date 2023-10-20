@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4021/4021693.png" type="image/x-icon">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+  </style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url('./bg.jpg');
+      font-family: "Poppins", sans-serif;
+    }
+
+    main {
+      width: 100%;
+      height: calc(100vh - 30px);
+      display: flex;
+      justify-content: center;
+    }
+
+    textarea {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px;
+      width: calc(100% - 10%);
+      border: 3px solid #fff;
+      border-radius: 6px;
+      resize: none;
+      font-family: "Poppins", sans-serif;
+      line-height: 1.2;
+      background-color: #fff0;
+      color: #fff;
+      letter-spacing: 2px;
+      word-spacing: 3px;
+    }
+
+    @media (max-width: 600px) {
+      textarea {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <textarea id="message"></textarea>
+    
+  </main>
+  <script>
+    const msg = document.getElementById("message");
+      console.log("Hello" + msg.value);
+      message.addEventListener("input", function handleChange(event) {
+        localStorage.setItem("textarea", event.target.value);
+      });
+      const getmsg = localStorage.getItem("textarea");
+
+      function settextValue() {
+        var textUpdate = document.getElementById("message");
+
+        var valueUpdate = getmsg;
+
+        textUpdate.value = valueUpdate;
+        console.log(valueUpdate)
+      }
+      settextValue();
+  </script>
+</body>
+
+</html>
